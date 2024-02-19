@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to our website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: skyblue; /* Change background color to sky blue */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .chatbot-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        #chatbot-btn {
+            padding: 10px 20px;
+            background-color: #ffb6c1;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        #chatbot-btn:hover {
+            background-color: #ff809e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to our website</h1>
+        <p style="text-align: center;">Here are some mental health consultancy details in your area</p>
+        <label for="district">Select District:</label>
+        <select id="district">
+            <option value="">Select District</option>
+            <option value="Ariyalur">Ariyalur</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Cuddalore">Cuddalore</option>
+            <option value="Dharmapuri">Dharmapuri</option>
+            <option value="Dindigul">Dindigul</option>
+            <option value="Erode">Erode</option>
+            <option value="Kancheepuram">Kancheepuram</option>
+            <option value="Kanniyakumari">Kanniyakumari</option>
+            <option value="Karur">Karur</option>
+            <option value="Krishnagiri">Krishnagiri</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Nagapattinam">Nagapattinam</option>
+            <option value="Namakkal">Namakkal</option>
+            <option value="Perambalur">Perambalur</option>
+            <option value="Pudukkottai">Pudukkottai</option>
+            <option value="Ramanathapuram">Ramanathapuram</option>
+            <option value="Salem">Salem</option>
+            <option value="Sivaganga">Sivaganga</option>
+            <option value="Thanjavur">Thanjavur</option>
+            <option value="The Nilgiris">The Nilgiris</option>
+            <option value="Theni">Theni</option>
+            <option value="Thiruvallur">Thiruvallur</option>
+            <option value="Thiruvarur">Thiruvarur</option>
+            <option value="Thoothukkudi">Thoothukkudi</option>
+            <option value="Tiruchirappalli">Tiruchirappalli</option>
+            <option value="Tirunelveli">Tirunelveli</option>
+            <option value="Tiruppur">Tiruppur</option>
+            <option value="Tiruvannamalai">Tiruvannamalai</option>
+            <option value="Vellore">Vellore</option>
+            <option value="Viluppuram">Viluppuram</option>
+            <option value="Virudhunagar">Virudhunagar</option>
+        </select>
+    </div>
+
+    <div class="chatbot-container">
+        <button id="chatbot-btn" onclick="openChatbot()">Chatbot</button>
+    </div>
+
+    <script>
+        function openChatbot() {
+            window.location.href = "https://3c13-2401-4900-6070-601c-40ad-6415-8589-42cd.ngrok-free.app";
+        }
+
+        document.getElementById("district").addEventListener("change", function() {
+            var selectedDistrict = this.value;
+            if (selectedDistrict === "Coimbatore") {
+                // Redirect to Coimbatore details page
+                window.location.href = "coimbatore_details.html";
+            }
+        });
+    </script>
+</body>
+</html>
