@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+</head>
+<body>
+    <h1>Emotion Detection</h1>
+    <button id="capture-btn">Capture</button>
+    <br>
+    <br>
+    <img id="video-stream" src="{{ url_for('video_feed') }}" width="640" height="480" alt="Video Stream">
+    <script>
+        document.getElementById('capture-btn').addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "{{ url_for('capture') }}", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        if (xhr.responseText.startsWith('Frame captured successfully')) {
+                            alert(xhr.responseText);
+                        } else {
+                            window.location.href = 'http://127.0.0.1:8000/';
+                        }
+                    } else {
+                        alert('Error: ' + xhr.statusText);
+                    }
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
